@@ -1,10 +1,11 @@
 # 1 常量、变量、数据类型
 
 + 常量：值不能改变
-
 + 变量：值可以改变
-
 + 数据类型：变量值的类型，如整数、小数、字母... ...
++ <font color='red'>基本数据类型和引用数据类型</font>
+  + <font color='red'>基本数据类型：在内存中存放的是值</font>
+  + <font color='red'>引用数据类型：在内存中存放的是地址</font>
 
 ## 1.1 基本数据类型
 
@@ -22,7 +23,7 @@
 | byte  | 1个字节  | 8位  | -128到127                                 |
 | short | 2个字节  | 16位 | -32768 到 32767                           |
 | int   | 4字节    | 32位 | -2147483648到2147483647                   |
-| log   | 8字节    | 64位 | -9223372036854775808到9223372036854775807 |
+| long  | 8字节    | 64位 | -9223372036854775808到9223372036854775807 |
 
 ### 1.2.1 long类型
 
@@ -39,7 +40,7 @@ public class long_test {
 
 ### 1.2.2 数字符号
 
-写在变量值的前面
++ 写在变量值的前面
 
 ## 1.3 小数
 
@@ -102,7 +103,15 @@ boolean = true/false
 + 定义变量时必须声明变量类型
 + 变量使用前必须对变量初始化（赋值）
 
-### 1.7.1 声明变量
+### 1.7.1 变量作用域
+
+- 如果<font color='red'>**在当前类中都能生效的变量叫全局变量**</font>
+
+- 如果<font color='red'>**在方法中定义的变量叫局部变量**</font>
+
+- 若局部变量和全局变量重名，遵循就近原则
+
+### 1.7.2 声明变量
 
 ```java
 byte a;
@@ -113,20 +122,20 @@ String a = "value1", b = "value2", c = "value3";
 //声明多个变量并赋值： 变量类型 变量名1 = 值1, 变量名2 = 值2, 变量名3 = 值3;
 ```
 
-### 1.7.2 变量赋值
+### 1.7.3 变量赋值
 
 ```java
 a = 10;
 //对变量赋值：变量名称 = 变量值;
 ```
 
-### 1.7.3 变量使用
+### 1.7.4 变量使用
 
 ```java
 		System.out.println(currentMonth);
 ```
 
-### 1.7.4 变量值修改
+### 1.7.5 变量值修改
 
 ```java
 int a = 10;
@@ -153,7 +162,12 @@ public class test {
 
 ## 1.9 数据类型转换
 
-
++ 1、除boolean外，七种基本数据类型之间可能可以转换
++ 2、取值范围小的类型可以直接给取值范围大的类型转，构成自动类型转换，也叫隐式类型转换
++ 3、取值范围大的向取值类型小的转需要强制类型转换（可能出现精度损耗）
++ 4、对byte、short、char类型赋值时，没有超出当前数据类型取值范围时，可直接赋值
++ 5、byte、short、char进行混合运算时，先转为int类型，再进行运算
++ 6、当多种值类型（除Boolean外七种基本数据类型）进行混合运算时，结果为运算类型中大的类型
 
 # 2 数据运算符
 
@@ -185,9 +199,9 @@ long + long == long
 
 + **参与运算的类型不同，结果类型为参与运算的数据类型中，大范围的值的类型相同**
 
-long + byte == long
++ long + byte == long
 
-short ，byte，char在做运算的时候会转成int，运算时需要强制转换类型
++ <font color='red'>short ，byte，char在做运算的时候会转成int，运算时需要强制转换类型</font>
 
 ```java
 public class homework {
@@ -207,12 +221,13 @@ public class homework {
 
 + \+ 用的较多，符号和数字用的多
 
-+ 若参加运算的类型的字符，则会用编码集进行运算
++ 若<font color='red'>参加运算的类型的字符，则会用编码集进行运算</font>
 
 ```java
 public class Bools {
 	public static void main (String[] args) {
 		int e = '1';
+        //e是int类型，'1'是char类型
 		System.out.println(e);
 }}
 ```
@@ -224,7 +239,7 @@ PS D:\JAVA> java Bools
 49
 ```
 
-+ 若参与运算的是一个变量，结果的类型默认是int
++ 若<font color='red'>参与运算的是一个变量，结果的类型默认是int</font>
 
 ### 2.2.2 定义字符串类型变量
 
@@ -239,9 +254,9 @@ public class chars {
 
 ### 2.2.3 字符串的算数运算
 
-编程常用数据类型：int，long，double
++ 编程常用数据类型：int，long，double
 
-面试常问：short、byte，float、char
++ 面试常问：short、byte，float、char
 
 #### 2.2.3.1 运算的直接是字符
 
@@ -352,7 +367,7 @@ PS D:\JAVA> java test
 
 += 、-=、 *= 、/=
 
-数字间的运算（关系运算），结果为bool类型
+数字间的运算（关系运算），结果为boolean类型
 
 表示数字间关系
 
@@ -443,8 +458,6 @@ false
 true
 ```
 
-
-
 ### 2.5.6 移位
 
 <<：左移 ，左移一位，值变为原来的一倍
@@ -485,7 +498,7 @@ public class test1 {
 
 ## 2.6 字符串类型
 
-String ,值需要使用“”赋值
++ String ,值需要使用“”赋值
 
 ### 2.6.1 String与字符的拼接
 
@@ -507,11 +520,9 @@ PS D:\JAVA> java test1
 ab
 ```
 
-## 
+# 3 Scanner标准输入
 
-# 14 Scanner
-
-## 14.1 以回车为标识
+## 3.1 以回车为标识
 
 ```java
         //Scanner 控制台输入
@@ -527,7 +538,7 @@ ab cd
 ab cd
 ```
 
-## 14.2 返回int数据类型
+## 3.2 返回int数据类型
 
 ```java
         //Scanner 控制台输入
@@ -543,7 +554,16 @@ ab cd
 11
 ```
 
-## 14.3 以空白标识符分割
+## 3.3 String类型
+
+```Java
+    //Scanner 控制台输入
+    Scanner input = new Scanner(System.in);
+    //返回int数据类型
+    System.out.println(input.next());
+```
+
+## 3.4 以空白标识符分割
 
 ```java
         //Scanner 控制台输入
@@ -559,4 +579,152 @@ ab a
 ab
 ```
 
-# 
+
+
+# 4 分支语句
+
+## 4.1 if
+
+### 4.1.1 一个条件
+
+```java
+if (条件 boolean类型) {
+    若条件成立，执行{
+        
+    } 
+}    
+```
+
+### 4.1.2 两个条件
+
+```java
+if (条件 boolean类型) {
+    若条件成立，执行{
+        
+    } else {
+        代码
+    }
+}    
+```
+
+### 4.1.3多个条件
+
+```java
+if (条件 boolean类型) {
+    若条件成立，执行{
+        
+    } else if (条件) {
+        代码
+    } else {
+    }
+}    
+```
+
+## 4.2 swich case 
+
++ <font color='red'>case穿透：忘记写break会导致case一直向下执行，直到遇到break，或者switch</font>
++ 和 case 后的值比较
+
+值只可以为byte，short，int，char，String
+
+```java
+switch (值) {
+    case 值:
+         代码
+    break:
+  }
+```
+
++ <font color='red'>case比default优先级高</font>
++ <font color='red'>default可以放在case前，但是还是会先执行case</font>
+
+```java
+switch 变量a {
+    case a == 1:
+         代码
+    break:
+    //强制终止当前循环
+    default:
+    //若值都不相等，执行default代码
+  }
+```
+
+# 3 循环
+
+循环三要素:初始值、循环条件、更新初始值
+
+## 3.1 for循环
+
+### 3.1.1 循环格式
+
+```java
+for (初始值; 循环条件; 更新初始值)   {
+	循环语句
+	}
+```
+
+#### 3.1.2 for循环执行过程
+
+初始化值--> 判断循环条件-->执行循环语句--->更新初始值
+
+变量的作用域：定义变量的范围
+
+### 3.1.3 提取i作用范围
+
+```java
+int i = 0;
+for (; i < 2; i++) {}
+```
+
+### 3.2 while 循环
+
+#### 3.2.1 循环格式
+
+```java
+while (循环条件) {
+    执行的内容
+    更新条件
+}
+```
+
+## 3.3 do while循环
+
+### 3.3.1 循环格式
+
+```java
+do {
+    循环体
+} while {
+    循条件
+```
+
+### 3.3.2 do while 循环特点
+
++ 无论条件是否满足都会执行至少循环
+
+## 3.4 中断循环
+
+continue：跳过当前循环，进行下一次循环
+
+break：结束循环
+
+return：结束方法，执行后退出该方法，每个方法最后都会执行return
+
+
+
+==与equals区别
+
++ == 比较的是两个值，内存中地址是否相同
++ equals是比较的两个值是否相同
+
++ 值比较
+
+```Java
+    //比较基本数据类型和引用数据类型的地址
+    System.out.println(i1 == i2);
+    //比较值是否相同
+    System.out.println(i1.equals(i2));
+```
+
+switch case 
+

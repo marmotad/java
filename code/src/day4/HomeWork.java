@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class HomeWork {
-	public static void main(String[] arga) {
+	public static void main(String[] args) {
 		//1.判断一个数是否是五位的正数
 		Scanner inputNum = new Scanner(System.in);
 		System.out.print("请输入一个数字：");
