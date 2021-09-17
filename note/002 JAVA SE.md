@@ -109,6 +109,8 @@ byte a;
 //声明变量: 数据类型 变量名;
 byte a = 1;
 //声明变量并赋值: 数据类型 变量名 = 变量值;
+String a = "value1", b = "value2", c = "value3";
+//声明多个变量并赋值： 变量类型 变量名1 = 值1, 变量名2 = 值2, 变量名3 = 值3;
 ```
 
 ### 1.7.2 变量赋值
@@ -122,6 +124,15 @@ a = 10;
 
 ```java
 		System.out.println(currentMonth);
+```
+
+### 1.7.4 变量值修改
+
+```java
+int a = 10;
+a = 100;
+//修改变量值
+System.out.println(a);
 ```
 
 ## 1.8 程序的执行顺序
@@ -141,3 +152,411 @@ public class test {
 ```
 
 ## 1.9 数据类型转换
+
+
+
+# 2 数据运算符
+
+##### 一元运算符
+
+参与运算的数据只有一个：!
+
+##### 二元运算符
+
+参与运算的数据有两个
+
+& | >> <<  + - * /  += -+ *=  /+
+
+##### 三元运算符
+
+参与运算的数据有三个
+
+## 2.1 算数运算符
+
+\+ - \* / % (取余)
+
++ 参与运算的数据与参与运算的数据类型相同（前提：参与运算的所有数据类型要相同,<font color='red'>**且buye和short的除外，byte + byte,byte+short,short+short的结果都是int**</font>）
+
+int + int == int
+
+long + long == long
+
+... ...
+
++ **参与运算的类型不同，结果类型为参与运算的数据类型中，大范围的值的类型相同**
+
+long + byte == long
+
+short ，byte，char在做运算的时候会转成int，运算时需要强制转换类型
+
+```java
+public class homework {
+    	public static void main (String[] args) {
+		short e = 128;
+		System.out.println(e / 100);
+		short f = (short)(e%100);
+//强制转换数据类型
+		System.out.println(f / 10);
+}
+} 
+```
+
+## 2.2 char做算数运算
+
+### 2.2.1 直接打印int类型为字符串的变量值
+
++ \+ 用的较多，符号和数字用的多
+
++ 若参加运算的类型的字符，则会用编码集进行运算
+
+```java
+public class Bools {
+	public static void main (String[] args) {
+		int e = '1';
+		System.out.println(e);
+}}
+```
+
+###### 执行结果
+
+```
+PS D:\JAVA> java Bools
+49
+```
+
++ 若参与运算的是一个变量，结果的类型默认是int
+
+### 2.2.2 定义字符串类型变量
+
+```
+public class chars {
+	public static void main (String[] args) {
+	char a = 'L';
+	System.out.println(a);
+}
+}
+```
+
+### 2.2.3 字符串的算数运算
+
+编程常用数据类型：int，long，double
+
+面试常问：short、byte，float、char
+
+#### 2.2.3.1 运算的直接是字符
+
++ char类型的值对应ASCALL值，与数字相加，得到最终结果对应的值
+
+```
+public class chars {
+	public static void main (String[] args) {
+	char b = '0' + 10;
+	System.out.println(b);
+}
+}
+```
+
+| ASCII值 | 控制字符 | ASCII值 | 控制字符 | 控制字符 | ASCII值 | 控制字符 |
+| ------- | -------- | ------- | -------- | -------- | ------- | -------- |
+| 16      | DLE      | 48      | 0        | P        | 112     | p        |
+| 26      | SUB      | 58      | :        | Z        | 122     | z        |
+
+###### 运行结果：
+
+```powershell
+PS D:\JAVA> java chars
+:
+```
+
+#### 2.2.3.2 运算的是保存字符的变量
+
+```java
+public class chars {
+	public static void main (String[] args) {
+	char c = '0';
+	int d = c + 1;
+//不能用char类型接收，否则会提示类型不兼容
+	System.out.print(d);
+}
+}
+```
+
+###### 运行结果：
+
+```powershell
+PS D:\JAVA> java chars
+49
+```
+
+## 2.3 复合运算符
+
++ 若一个式子中，出现了算数运算符和符合运算符，<font color='red'>优先计算算数运算符。</font>算数运算符优先级大于复合运算符
++ 若使用符合运算符时，不会改变左侧变量数据类型，小数部分会被舍去
+
+```java
+public class test {
+	public static void main (String[] args) {
+		int a = 10;
+		int e = 2;
+		a *= e + 1;
+		System.out.println(a);
+}}
+```
+
+###### 运算结果：
+
+```java
+PS D:\JAVA> javac .\test.java
+PS D:\JAVA> java test
+30
+```
+
+## 2.4 数据运算
+
+### 2.4.1 数字的符号
+
++、-可以表示数字的正负
+
+### 2.4.2 结合变量
+
+++、-- ，表示自增、自减，在当前变量的基础上+/-1，可以放在<font color='red'>变量前面</font>，或者<font color='red'>变量后面</font>
+
+#### 2.4.2.1 在变量前面和后面的区别
+
++ <font color='red'>写在变量前面</font>，先用变量值，后加1
+
++ <font color='red'>写在变量后面</font>，先加1，后用变量值
+
+```java
+public class test {
+	public static void main (String[] args) {
+		byte a = 120 ;
+		System.out.println(a++);
+		System.out.println(a);
+        System.out.println(a++);
+}}
+```
+
+```powershell
+PS D:\JAVA> java test
+120
+121
+121
+```
+
+#### 2.4.2.2 赋值运算符：
+
+= ： int a = 1 ;
+
+将1赋值给int 类型的a 
+
++= 、-=、 *= 、/=
+
+数字间的运算（关系运算），结果为bool类型
+
+表示数字间关系
+
+<、<=、>=、<=、==、!=
+
++ 关系运算符一次只能比较一个式子是否成立，若来连续比较需要使用逻辑运算符
+
+#### 2.4.2.3 数据运算：
+
++ 使用数字运算符和字符运算符
+
+若使用了符合运算符，进行运算，在自己本身的基础上进行的运算，<font color='red'>**数据类型不会发生变化**</font>
+
+```java
+public class test { 
+	public static void main (String[] args) {
+		int a = 10;
+		a += a;
+		System.out.println(a);
+}}
+```
+
+## 2.5 关系运算
+
+### 2.5.1 逻辑运算符
+
+用来连接多个关系运算表达式（a + b a + b - 1 a * b a > b）
+
+语句结束表示完成的一句话 赋值
+
+### 2.5.2 表达式
+
+短路与和短路或
+
+#### 2.5.2.1 短路与运算：
+
+当全部结果为true时，结果为true，否则为false
+
++ 前面的如执行失败，整个表达式是false，后面的不会执行
+
+#### 2.5.2.2 短路或运算：
+
+至少有一个表达式成立，结果为true，否则为false
+
++ 前面的如执行成功，整个表达式是true，后面的不会执行
+
+### 2.5.3 全路与和全路或
+
++ & | 是全路运算符，无论前面表达式是否可以决定整个表达式结果，都继续执行后面语句
+
+#### 2.5.3.1 全路与
+
++ 取决于参与运算的数据类型
+
+#### 2.5.3.2 运算结果
+
+运算结果取决于全路运算符
+
++ 若链接的是关系表达式，无论前面的表达式是否能决定整个表达式的结果，后边都执行
++ 若连接的是数字，则对数字进行位运算
+
+### 2.5.4 逻辑异或
+
++ 符号：^ 
++ 当两侧条件相同时，为true,否则为false
+
+```java
+System.out.println(true ^ true);
+System.out.println(false ^ true);
+
+]$ java text1.java
+false
+true
+
+```
+
+### 2.5.5 逻辑非
+
++ 符号：^ 
++ 对boolean值取反
+
+```java
+System.out.println(!true);
+System.out.println(!false);
+
+]$ java text1.java
+false
+true
+```
+
+
+
+### 2.5.6 移位
+
+<<：左移 ，左移一位，值变为原来的一倍
+
+\>>：右移，右移一位，值变为原来的一半
+
+```
+public class test1 {
+	public  static void main (String[] args) {
+	int a = 5;
+	System.out.println(a >> 1);
+	System.out.println(a << 1);
+}
+}
+```
+
+### 2.5.6 三目运算符
+
++ 格式：条件1?代码1:代码2
+  + 成立执行代码1，条件不成立执行代码2
+
++ 参与运算的结果取决于前两个值
+
++ 判断前面的表达式是否成立，若成立表达式结果为值1，不成立则为值2
+
+```java
+public class test1 {
+    public static void main (String[] args) {
+        int a = 10;
+        int b = 20;
+        System.out.print(a>b?20:true);
+        System.out.print(a<b?20:true);
+    }
+}
+```
+
+希望实现若前面的表达式成立，则执行前一部分 的代码，并把值赋给结果，否则执行第二部分的代码，赋给表达式的结果
+
+## 2.6 字符串类型
+
+String ,值需要使用“”赋值
+
+### 2.6.1 String与字符的拼接
+
++ 使用+ 是字符串拼接
+
+```java
+public class test1 {
+	public  static void main (String[] args) {
+	String b = "a" + "b";
+	System.out.print(b);
+}
+}
+```
+
+###### 运行结果：
+
+```
+PS D:\JAVA> java test1
+ab
+```
+
+## 
+
+# 14 Scanner
+
+## 14.1 以回车为标识
+
+```java
+        //Scanner 控制台输入
+        Scanner input = new Scanner(System.in);
+        //以回车为标识，遇到回车表示结束
+        System.out.println(input.nextLine())
+```
+
+###### 运行结果
+
+```
+ab cd
+ab cd
+```
+
+## 14.2 返回int数据类型
+
+```java
+        //Scanner 控制台输入
+        Scanner input = new Scanner(System.in);
+        //返回int数据类型
+        System.out.println(input.nextInt());
+```
+
+###### 运行结果
+
+```
+11
+11
+```
+
+## 14.3 以空白标识符分割
+
+```java
+        //Scanner 控制台输入
+        Scanner input = new Scanner(System.in);
+        //控制台字符串接收，遇到空白标识符结束
+        System.out.println(input.next());
+```
+
+###### 运行结果
+
+```
+ab a
+ab
+```
+
+# 
