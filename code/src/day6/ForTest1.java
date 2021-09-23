@@ -14,7 +14,7 @@ class ForTest1 {
 			}
 		}
 		System.out.println("------------");
-		for (int i = 123; i < 697; i++) {
+		for (int i = 123; i <= 697; i++) {
 			if (i % 55 == 0) {
 				System.out.println(i);
 			}
