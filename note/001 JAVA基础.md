@@ -41,10 +41,11 @@ JDK:JRE+Java的开发工具。
 
 ## 1.4 JAVA运行步骤
 
-
 我们开发的实际情况是：我们利用JDK（调用JAVA API）开发了属于我们自己的JAVA程序后，通过JDK中的编译程序（javac）将我们的文本java文件编译成JAVA字节码，在JRE上运行这些JAVA字节码，JVM解析这些字节码，映射到CPU指令集或OS的系统调用。
 
-![image-20210915171652444](D:/JAVA/note/001%20JAVA%E5%9F%BA%E7%A1%80.assets/image-20210915171652444.png)
+![image-20210915171652444](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210915171652444.png)
+
+
 
 # 2 编写和运行JAVA程序
 
