@@ -38,11 +38,11 @@ class Homework06{
 		}
 		//输出100  95  90  85 ...... 5的结果
 		System.out.println("------------");
-		int y = 5;
+		int y = 100;
 		do {
 			System.out.println(y);
-			y += 5;
-		} while (y <= 100);
+			y -= 5;
+		} while (y >= 5);
 		//判断一个字符是大写字母、小写字母还是数字字符
 		Scanner input = new Scanner(System.in);
 		System.out.print("请输入一个字母、数字：");
@@ -58,13 +58,14 @@ class Homework06{
 		}
 		//打印九九乘法表，并且按照格式打印(面试题)
 		for (int a = 1; a <= 9; a++) {
-			for (int b = 1; b <= 9; b++) {
-				System.out.print(a + "*" + b + "=" + a * b + "\t");
-				if (a == b) {
+			for (int b = 1; b <= a; b++) {
+				System.out.print(b + "*" + a + "=" + b * a + "\t");
+				/*if (a == b) {
 					System.out.println();
 					break;
-				}
+				}*/
 			}
+		System.out.println();
 		}
 	}
 }

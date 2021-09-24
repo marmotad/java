@@ -727,6 +727,130 @@ do {
     + 先执行循环体再判断：do while
 + 当初始循环条件为false时，for和while循环执行不执行循环体，do while执行一次循环体
 
+# 6 方法
+
++ 方法公开化（用public修饰，代表类外面可调用）
+
+## 6.1 方法的格式
+
++ 具有某种功能的代码，例如main具有程序入口方法的功能
+
+```
+public static void 方法名(数据类型 变量名)   ----- 方法的声明 {方法中具有某种功能的代码----方法体
+} 
+public static: 修饰符		^形参
+void:返回值类型
+
+```
+
++ 方法写在class文件中
++ 不能在一个方法中再写一个方法
++ 方法名是标识符
+
+## 6.2 方法分类
+
+### 6.2.1 是否有参数
+
++ 有参数
+
++ 无参数
+
+### 6.2.2 是否有返回值
+
++ 无返回值（方法名前是void的方法没有返回值）
+
+  + <font color='red'>无返回的方法需要使用return时，只能使用'return;'作用是结束方法</font>
+  + 当switch语句中，有return时，不能出现break，否则会编译错误
+
+  ![image-20210924153311521](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210924153311521.png)
+
+```java
+	//定义无参无返回值得方法
+	public static void classSum() {
+		int a = 2;
+		int b = 55;
+		int sum = a + b;
+		System.out.print(sum);
+	}
+
+	//定义无参带返回值的方法
+class Product {
+	public static int product() {
+		int product = 9 * 9;
+		return product;
+	}
+	
+	public static void main(String[] args) {
+		System.out.print(product());
+        //当方法带有返回值类型时，若不打印返回值则不会输出返回值
+	}
+}
+
+	//有参无返回值
+
+publiv static void print(int n) {}
+//参数格式 ： 参数类型 参数名，如：int n ，多个参数使用,int分隔，如：int i ,int j
+```
+
+### 6.2.3 有返回值的方法调用
+
++ 调用时，方法给了我们数据值，在调用时，可以使用对应的变量接收
+
++ 如果需要得到方法中的数据，继续做其他操作，该方法需定义成有返回值的方法
++ 有返回值（必须使用完成后，使用return返回对应类型值）
+  + 当该方法只有一个返回值，可以写成带返回值的方法
+
++ 带返回值方法注意事项：
+
+> 返回值类型不能使用void，需要使用返回值的类型
+>
+> 必须使用return 输出返回值
+>
+> 当方法带有返回值类型时，建议在方法调用处进行处理，否则不会输出
+
+## 6.3 定义方法
+
++ 方法用
+
+```java
+    private static void sorts(int[] sorts) {
+        //int[] sorts = {34,21,8,49};
+        for (int j = 0; j < sorts.length-1; j++) {
+            for (int i = 0; i < sorts.length - 1 - j; i++) {
+                if (sorts[i] > sorts[i + 1]) {
+                    int temp = sorts[i];
+                    sorts[i] = sorts[i + 1];
+                    sorts[i + 1] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < sorts.length; i++) {
+            System.out.println(sorts[i]);
+        }
+
+    }
+}
+<<<<<<< HEAD
+```
+
+## 6.4 调用自定义方法
+
++ jvm调用main方法，main方法调用自己写的代码
+
++ 方法调用时，观察调用的方法是不是有形参，如果有，形参是什么数据，
++ 调用当前类的方法时，可以省略类名，调用其他类中的方法需要加类名
+
+```
+ public static void main(String[] args) {
+        int [] sorts1 = {20,10,0,39};
+        int [] sorts2 = {20,10,0,39};
+        sorts(sorts1);
+        //引用方法时，要注意是否有形参，有的话需要对形参赋值，若有多个形参时，用“，”隔开
+    }
+```
+
+# 
+
 ==与equals区别
 
 + == 比较的是两个值，内存中地址是否相同
