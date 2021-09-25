@@ -877,6 +877,7 @@ publiv static void print(int n) {}
     }
 ```
 
+<<<<<<< HEAD
 ## 6.5 方法重载
 
 + 在同一个类中定义多个方法，方法名相同，但是参数列表不同
@@ -926,6 +927,9 @@ package 包名;
 ```
 
 
+=======
+# 
+>>>>>>> origin/master
 
 ==与equals区别
 
