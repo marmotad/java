@@ -659,7 +659,7 @@ if (条件 boolean类型) {
 switch (值) {
     case 值:
          代码
-    break:
+    break;
   }
 ```
 
@@ -929,7 +929,7 @@ package 包名;
 
 =======
 # 
->>>>>>> origin/master
+>>>>>>> 7origin/master
 
 ==与equals区别
 
