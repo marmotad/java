@@ -1,107 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0495ada8-76c2-4982-a00d-2c4ed7088c88" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/day08/day8.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../JAVACoder/day08/publicmethod.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/JavaProjecy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day08/Folower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/HWDay08/HWDay08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/HelloWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/VarLearn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/VarTask01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/VarTask02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/homework.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day2/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day3/HomeWork.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day3/HomeWork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day3/SumNum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day3/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day3/text1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day4/HomeWork.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day4/HomeWork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day4/IfTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day4/Input.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day4/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/Homework05.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/Homework05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/IfTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/IfTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/SwitchTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day5/SwitchTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/DoWhileTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/DoWhileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/ForTest1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/ForTest1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/Homework06.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/Homework06.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/LoopExer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/LoopExer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/UserLogin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/UserLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/WhileTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day6/WhileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Homework07.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Homework07.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Judge.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Judge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Method.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Method.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/PrintNum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/PrintNum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../coder/JavaProject/JavaProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code.iml" beforeDir="false" />
+    <list default="true" id="0495ada8-76c2-4982-a00d-2c4ed7088c88" name="Changes" comment="day9">
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/demo02/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/demo02/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/demo3/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/demo3/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework01/Class.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework01/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework02/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework02/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework03/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework03/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework04/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/Day09/homework04/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo1/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo1/practise/Dog1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo1/practise/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo1/statudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo2/Class.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo2/Statudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/demo2/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework01/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework01/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework02/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework02/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework03/Statudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework03/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework04/Date.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework04/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework05/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework05/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework06/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework06/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaProjecy/src/day10/homework06/publishingHouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaProjecy/src/day7/Homework07.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaProjecy/src/day7/Homework07.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../note/002 JAVA SE.md" beforeDir="false" afterPath="$PROJECT_DIR$/../note/002 JAVA SE.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="1yem0gONiFjzWHQSmaaAePEIVgu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="flattenModules" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../马士兵Java零基础后端工程师-马士兵教育/马士兵Java零基础到就业VIP资料/JVM 资料/JVM-master/src/com/mashibing/jvm/c1_bytecode/T0100_ByteCode01.java" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JAVA\code\JavaProjecy\src" />
       <recent name="D:\JAVA\code\JavaProjecy" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.Test (2)">
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.homework04.Test" />
+      <module name="JavaProjecy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.homework04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.homework06.Test" />
+      <module name="JavaProjecy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.homework06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.homework02.Test" />
+      <module name="JavaProjecy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.homework02.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.homework05.Test" />
+      <module name="JavaProjecy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.homework05.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day10.homework03.Test" />
+      <module name="JavaProjecy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day10.homework03.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test (2)" />
+        <item itemvalue="Application.Test (5)" />
+        <item itemvalue="Application.Test (1)" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test (4)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +180,17 @@
       <option name="presentableId" value="Default" />
       <updated>1632620209312</updated>
       <workItem from="1632620210707" duration="446000" />
+      <workItem from="1632620725631" duration="10216000" />
+      <workItem from="1632640556571" duration="30538000" />
     </task>
+    <task id="LOCAL-00001" summary="day9">
+      <created>1632620805298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632620805298</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,5 +206,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="day9" />
+    <option name="LAST_COMMIT_MESSAGE" value="day9" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/JavaProjecy/src/Day09/homework01/Class.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

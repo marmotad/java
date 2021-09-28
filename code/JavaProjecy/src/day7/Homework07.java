@@ -2,28 +2,32 @@ import java.util.*;
 
 class Homework07{
 
-	//±àĞ´Ò»¸ö·½·¨£¬ÅĞ¶ÏÒ»¸öÊıÊÇÆæÊı»¹ÊÇÅ¼Êı
+	//ç¼–å†™ä¸€ä¸ªæ–¹æ³•ï¼Œåˆ¤æ–­ä¸€ä¸ªæ•°æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°
 	public static String parity(int a) {
 		if (a  %2 == 0) {
-			return a + "ÊÇÅ¼Êı";
+			return a + "æ˜¯å¶æ•°";
 		}
-		return a + "ÊÇÆæÊı";
+		return a + "æ˜¯å¥‡æ•°";
 	}
-	//±àĞ´Ò»¸ö·½·¨£¬¸ù¾İĞÇÆÚµÃµ½Ã¿Ìì×öµÄÊÂÇé
+	//ç¼–å†™ä¸€ä¸ªæ–¹æ³•ï¼Œæ ¹æ®æ˜ŸæœŸå¾—åˆ°æ¯å¤©åšçš„äº‹æƒ…
 	public static String toDo(String a) {
 		switch (a) {
-			case "ĞÇÆÚÒ»" :
-			case "ĞÇÆÚ¶ş" :
-			case "ĞÇÆÚÈı" :
-			case "ĞÇÆÚÎå" :
-			case "ĞÇÆÚÁù" :
-				return "ÉÏ¿Î";
-			case "ĞÇÆÚÈÕ" :
-				return "ĞİÏ¢";
-			case "ĞÇÆÚËÄ" :
-				return "×ÔÏ°";
+			case "æ˜ŸæœŸä¸€" :
+				return "ä¸Šè¯¾";
+			case "æ˜ŸæœŸäºŒ" :
+				return "ä¸Šè¯¾";
+			case "æ˜ŸæœŸä¸‰" :
+				return "ä¸Šè¯¾";
+			case "æ˜ŸæœŸäº”" :
+				return "ä¸Šè¯¾";
+			case "æ˜ŸæœŸå…­" :
+				return "ä¸Šè¯¾";
+			case "æ˜ŸæœŸæ—¥" :
+				return "ä¼‘æ¯";
+			case "æ˜ŸæœŸå››" :
+				return "è‡ªä¹ ";
 		}
-		return "ÊäÈë´íÎó";
+		return "è¾“å…¥é”™è¯¯";
 	}
 	public static void divisibleNumber() {
 		int i = 100;
@@ -35,23 +39,23 @@ class Homework07{
 			i++;
 		} while (i <= 200);
 	}
-	//ÅĞ¶ÏÒ»¸öÄêÁäÊÇÀÏÄê¡¢ÖĞÄê¡¢ÇàÄê»¹ÊÇÉÙÄê
+	//åˆ¤æ–­ä¸€ä¸ªå¹´é¾„æ˜¯è€å¹´ã€ä¸­å¹´ã€é’å¹´è¿˜æ˜¯å°‘å¹´
 	public static String judgingAge(int a) {
 		if (a < 0 && a > 150) {
-			return "ÄêÁä²»ºÏ·¨";
+			return "å¹´é¾„ä¸åˆæ³•";
 		}
 		if (a < 16) {
-			return "ÉÙÄê";
+			return "å°‘å¹´";
 		}
 		if (a < 35) {
-			return "ÇàÄê";
+			return "é’å¹´";
 		}
 		if (a < 60) {
-			return "ÖĞÄê";
+			return "ä¸­å¹´";
 		}
-		return "ÀÏÄê";
+		return "è€å¹´";
 	}
-	//ÅĞ¶ÏÒ»¸ö³É¼¨£¬·µ»Ø¶ÔÓ¦µÄµÈ¼¶A¡¢B¡¢C
+	//åˆ¤æ–­ä¸€ä¸ªæˆç»©ï¼Œè¿”å›å¯¹åº”çš„ç­‰çº§Aã€Bã€C
 	public static char scor(int a) {
 		if (a >= 100) {
 			return 'A';
@@ -61,27 +65,27 @@ class Homework07{
 		}
 			return 'C';
 	}
-	//¸ù¾İÊäÈëÊı×Ö£¬·µ»Ø¶ÔÓ¦µÄĞÇÆÚ
+	//æ ¹æ®è¾“å…¥æ•°å­—ï¼Œè¿”å›å¯¹åº”çš„æ˜ŸæœŸ
 	public static String week(String a) {
 		switch (a) {
 		case "1":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "2":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "3":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "4":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "5":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "6":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		case "7":
-			return "ĞÇÆÚ" + a;
+			return "æ˜ŸæœŸ" + a;
 		}
-		return "ÊäÈë´íÎó";
+		return "è¾“å…¥é”™è¯¯";
 	}
-	//ÅĞ¶ÏÒ»¸öÊı£¬Èç¹û´óÓÚ0£¬ÔòµÃµ½1£¬Èç¹ûĞ¡ÓÚ0ÔòµÃµ½-1£¬·ñÔòµÃµ½0
+	//åˆ¤æ–­ä¸€ä¸ªæ•°ï¼Œå¦‚æœå¤§äº0ï¼Œåˆ™å¾—åˆ°1ï¼Œå¦‚æœå°äº0åˆ™å¾—åˆ°-1ï¼Œå¦åˆ™å¾—åˆ°0
 	public static int positiveAndNegative(int a) {
 		if (a > 0) {
 			return 1;
@@ -91,7 +95,7 @@ class Homework07{
 		}
 		return 0;
 	}
-	//Á½¸ö±äÁ¿ÖĞµÄÖµ½øĞĞ»¥»»
+	//ä¸¤ä¸ªå˜é‡ä¸­çš„å€¼è¿›è¡Œäº’æ¢
 	public static String exchangeValue(int i, int j) {
 		System.out.println("i:" + i + "j:" +j);
 		i = i + j;
@@ -101,31 +105,31 @@ class Homework07{
 	}
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		//±àĞ´Ò»¸ö·½·¨£¬ÅĞ¶ÏÒ»¸öÊıÊÇÆæÊı»¹ÊÇÅ¼Êı
-		System.out.print("ÇëÊäÈëÒ»¸öÊı×ÖÅĞ¶ÏÊÇ·ñÆæÅ¼Êı:");
+		//ç¼–å†™ä¸€ä¸ªæ–¹æ³•ï¼Œåˆ¤æ–­ä¸€ä¸ªæ•°æ˜¯å¥‡æ•°è¿˜æ˜¯å¶æ•°
+		System.out.print("è¯·è¾“å…¥ä¸€ä¸ªæ•°å­—åˆ¤æ–­æ˜¯å¦å¥‡å¶æ•°:");
 		System.out.println(parity(input.nextInt()));
-		//±àĞ´Ò»¸ö·½·¨£¬¸ù¾İĞÇÆÚµÃµ½Ã¿Ìì×öµÄÊÂÇé
-		System.out.print("ÇëÊäÈëĞÇÆÚ¼¸:");
+		//ç¼–å†™ä¸€ä¸ªæ–¹æ³•ï¼Œæ ¹æ®æ˜ŸæœŸå¾—åˆ°æ¯å¤©åšçš„äº‹æƒ…
+		System.out.print("è¯·è¾“å…¥æ˜ŸæœŸå‡ :");
 		System.out.println(toDo(input.next()));
-		//Êä³ö100---200·¶Î§ÄÚËùÓĞÄÜ±»19Õû³ıµÄÊı
+		//è¾“å‡º100---200èŒƒå›´å†…æ‰€æœ‰èƒ½è¢«19æ•´é™¤çš„æ•°
 		divisibleNumber();
-		//ÅĞ¶ÏÒ»¸öÄêÁäÊÇÀÏÄê¡¢ÖĞÄê¡¢ÇàÄê»¹ÊÇÉÙÄê
-		System.out.print("ÇëÊäÈëÄêÁä:");
+		//åˆ¤æ–­ä¸€ä¸ªå¹´é¾„æ˜¯è€å¹´ã€ä¸­å¹´ã€é’å¹´è¿˜æ˜¯å°‘å¹´
+		System.out.print("è¯·è¾“å…¥å¹´é¾„:");
 		System.out.println(judgingAge(input.nextInt()));
-		//ÅĞ¶ÏÒ»¸ö³É¼¨£¬·µ»Ø¶ÔÓ¦µÄµÈ¼¶A¡¢B¡¢C
-		System.out.print("ÇëÊäÈë³É¼¨:");
+		//åˆ¤æ–­ä¸€ä¸ªæˆç»©ï¼Œè¿”å›å¯¹åº”çš„ç­‰çº§Aã€Bã€C
+		System.out.print("è¯·è¾“å…¥æˆç»©:");
 		System.out.println(scor(input.nextInt()));
-		//¸ù¾İÊäÈëÊı×Ö£¬·µ»Ø¶ÔÓ¦µÄĞÇÆÚ
-		System.out.print("ÇëÊäÈë1~7:");
+		//æ ¹æ®è¾“å…¥æ•°å­—ï¼Œè¿”å›å¯¹åº”çš„æ˜ŸæœŸ
+		System.out.print("è¯·è¾“å…¥1~7:");
 		System.out.println(week(input.next()));
-		//ÅĞ¶ÏÒ»¸öÊı£¬Èç¹û´óÓÚ0£¬ÔòµÃµ½1£¬Èç¹ûĞ¡ÓÚ0ÔòµÃµ½-1£¬·ñÔòµÃµ½0
-		System.out.print("ÇëÊäÈëÒ»¸öÊıÅĞ¶ÏÕı¸º:");
+		//åˆ¤æ–­ä¸€ä¸ªæ•°ï¼Œå¦‚æœå¤§äº0ï¼Œåˆ™å¾—åˆ°1ï¼Œå¦‚æœå°äº0åˆ™å¾—åˆ°-1ï¼Œå¦åˆ™å¾—åˆ°0
+		System.out.print("è¯·è¾“å…¥ä¸€ä¸ªæ•°åˆ¤æ–­æ­£è´Ÿ:");
 		System.out.println( positiveAndNegative(input.nextInt()));
-		//Á½¸ö±äÁ¿ÖĞµÄÖµ½øĞĞ»¥»»
-		System.out.print("ÇëÊäÈëÁ½¸öÊı×Ö:");
+		//ä¸¤ä¸ªå˜é‡ä¸­çš„å€¼è¿›è¡Œäº’æ¢
+		System.out.print("è¯·è¾“å…¥ä¸¤ä¸ªæ•°å­—:");
 		System.out.println(exchangeValue(input.nextInt(),input.nextInt()));
-		//1.ÔÚmain·½·¨ÖĞÍê³É£¬ÅĞ¶ÏÒ»¸öÊıÊÇ·ñÊÇË®ÏÉ»¨Êı
-		System.out.print("ÇëÊäÈëÒ»¸öÊı×ÖÅĞ¶ÏÊÇË®ÏÉ»¨Êı:"); 
+		//1.åœ¨mainæ–¹æ³•ä¸­å®Œæˆï¼Œåˆ¤æ–­ä¸€ä¸ªæ•°æ˜¯å¦æ˜¯æ°´ä»™èŠ±æ•°
+		System.out.print("è¯·è¾“å…¥ä¸€ä¸ªæ•°å­—åˆ¤æ–­æ˜¯æ°´ä»™èŠ±æ•°:"); 
 		int num = input.nextInt();
 		int one = num % 10;
 		int oneDigitCube = one * one * one;
@@ -134,13 +138,13 @@ class Homework07{
 		int hundreds = num / 100;
 		int hundredsOfCubes = hundreds * hundreds * hundreds;
 		if (num > 1000 || num < 100) {
-			System.out.print("²»ÊÇÈıÎ»Êı£¡");
+			System.out.print("ä¸æ˜¯ä¸‰ä½æ•°ï¼");
 			return;
 		} 
 		if (hundredsOfCubes + tensOfCubes + oneDigitCube == num) {
-			System.out.println("ÊÇË®ÏÉ»¨Êı");
+			System.out.println("æ˜¯æ°´ä»™èŠ±æ•°");
 			return;
 		} 
-		System.out.println("²»ÊÇË®ÏÉ»¨Êı");
+		System.out.println("ä¸æ˜¯æ°´ä»™èŠ±æ•°");
 	}
 }
