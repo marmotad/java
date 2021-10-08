@@ -1115,79 +1115,872 @@ public 类名([参数列表]) {
   + this只能调用本类中其他构造方法
   + this只能访问本类中其他构造方法，也就是：构造方法不能调用自己会形成死循环
 
-## 9.4 封装
+# 10 封装
 
-### 9.4.1 什么是封装？
+## 10.1 什么是封装？
 
 隐藏类的内部信息，不允许外部程序直接访问，而是通过方法完成
 
-### 9.4.2 封装的操作步骤
+## 10.2 封装的操作步骤
 
 + 第一步：将属性编写为private修饰符，也就是：该属性只能在本类(当前类)中使用
 + 第二步：编写对应属性的方法(取值方法get和赋值方法set)
 + 根据情况适当的在set赋值方法中编写判断语句
 
-### 9.4.3 封装好处
+## 10.3 封装好处
 
 +  属性的值更安全，也就是：属性的值更合法、有意义、有效
 
+## 10.4 带参封装好处
+
+减少代码量，当set方法写为返回当前对象时，则再使用set方法可以进行连缀操作
+
+![image-20210928103614630](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210928103614630.png)
+
+![image-20210928103625591](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210928103625591.png)
+
+## 10.5 参数传递
+
+### 10.5.1 基本数据类型作为参数进行传递
+
++ 基本数据类型在内存中传递值
+
+### 10.5.2 引用数据类型作为参数进行传递
+
++ 引用数据类型在内存中存的是地址
++ 引用数据类型作为参数进行传递时，实参传给形参的是地址
+  + 也就是实参和形参内存地址相同
+  + 当另一个方中的对象属性发生改变时,
++ 
+
+# 11 继承
+
+## 11.1 继承父类
+
++ 继承发生在类和类之间
++ 通过extens指定父类。若没有指定父类，默认继承Object
++ 父类
+
+```java
+package git.cncf.online.day10;
+
+public class publicClass {
+    protected String name;
+    protected byte age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+```
+
++ 子类
+
+```java
+public class Student extends publicClass {
+    //子类中的代码
+}
+```
+
+## 11.2 方法重写
+
++ @override会标识方法重写
+
++ 类是具有相同特征和行为的一类事物 
+
++ 子类和父类拥有相同的方法，但方法体不同
+
++ 子类<font color="red">继承父类，参数列表相同，返回值相同</font>访问权限修饰符不同，<font color="red">称为方法重写</font>
++ 向上转型后，方法调用时，会进行动态绑定，都是子类特征中符合自己的特征行为，而不会执行父类的方法体（父类的方法体多余，执行不到）
++ 子类必须手动写方法才能实现重写（使用抽象方法提示子类需要方法重写）
+
+```java
+####cat
+package git.cncf.online.day11;
+
+public class Cat extends Animal {
+        private String type ;
+        public void run(){
+                System.out.println("cat可以跑");
+        }
+}
+
+####dog
+import git.cncf.online.day11.Animal;
+
+public class dog extends Animal {
+    private String type ;
+    public void run(){
+        System.out.println("dog跑的很快");;
+    }
+}
+
+####animal
+package git.cncf.online.day11;
+
+public class Animal {
+    private String name;
+    private int age;
+
+    public Animal () {
+    }
+
+    public Animal (String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void run(){
+        System.out.println("动物可以跑");
+    }
+
+}
+
+####test
+
+
+package git.cncf.online.day11;
+
+public class test11 {
+    public static void main(String[] args) {
+        b(new Cat());
+        b(new dog());
+    }
+
+    private static void b(Animal animal) {
+        System.out.println("================");
+        animal.run();
+        System.out.println("================");
+
+    }
+}
+```
+
+###### 运行结果
+
+```powershell
+================
+cat可以跑
+================
+================
+dog跑的很快
+================
+```
+
+## 11.3继承注意事项
+
++ 1.父类也叫做超类、基类superclass，子类也叫做派生类subclass
+
++ 2.子类继承父类时，不能继承父类中的构造方法
+
++ 3.继承满足条件：is a
+  + n 比如：猫是动物，狗是动物
+
+## 11.4 继承有两大特性
+
++ <font color='red'>**单根性：一个类只能继承一个直接的父类，称为单继承**</font>
+
++ <font color='red'>**类具有传递性**</font>
+
+class A{
+
+​    编写2个属性和2个方法
+
+}
+
+class B extends A{
+
+​    独有属性2个和独有方法5个
+
+}
+
+class C extends B{
+
+ 
+
+}
+
+# 12 this关键字与super关键字区别
+
+## 12.1 this关键字
+
+### 12.1.1 this代表
+
++ 在Java中，代表当前这个对象，也就是说：<font color='red'>当前谁调用这个方法，则this代表的就是谁</font>
+
+### 12.1.2 this在哪里使用
+
++ <font color='red'>在当前类(本类)中使用</font>
+
+### 12.1.3 this关键字访问范围
+
++ 可以访问本类中的实例变量、实例方法以及本类中的其他构造方法
+
++ 还可以访问父类中的实例变量和实例方法
+
+### 12.1.4 this关键字访问时顺序
+
+Ø 先在当前类中找该实例变量或实例方法，如果没有找到则再去父类中找该实例变量或实例方法
+
+## 12.2super关键字
+
+### 12.2.1 super代表
+
++ super代表超类，也就是父类
+
+### 12.2.2 super在哪里使用
+
++ 只能在子类中使用
+
+### 12.2.3 super关键字访问范围
+
++ 可以访问父类中的实例变量和父类中的实例方法
+
++ 还可以访问父类中的构造方法
+
++ 如果子类构造方法中没有编写super指定调用父类哪个构造方法，则系统默认调用父类的无参构造方法，否则调用父类相匹配的构造方法
+
+### 12.2.4 super关键字访问时，查找顺序
+
++ 直接去父类中找该实例变量或实例方法
+
++ 因此使用super.访问父类中的实例变量或实例方法，查找速度相对更快或者执行效率高
+
+### 12.2.5 super注意事项
+
++ 1.当访问子类独有实例变量或实例方法时，只能编写为this.或者没有局变量同名，也可以默认不写
+
++ 2.当子类中重写父类的方法后，如果在方法体中再调用父类的方法时，则只能使用super.否则就出现死循环，也就是方法自己调用方法自己
+
+## 12.3  当创建子类对象时，父类做了什么？
+
+先执行父类构造方法，然后再执行子类相匹配的构造方法
+
+# 13 static关键字
+
++ 可以<font color='red'>修饰属性、方法、代码块</font>、内部类以及实现静态导入
+
+## 13.1 static关键字修饰属性
+
++ 当在类中声明的变量，称为成员变量，也叫做属性或者叫做字段，f提示
++ 当属性前面没有编写static关键字，称为实例变量，也叫做对象的变量
++ 当属性前面编写static关键字，称为静态变量，也叫做类的变量
+
+```java
+    int a;// 实例变量
+    int b;//静态变量
+```
+
+### 13.1.2 静态变量特点
+
++ 当<font color='red'>**类加载到内存时，则就给静态变量分配空间，一直到程序结束**</font>
+
++ 在JDK8之前在方法区存储，JDK8及之后在静态变量在堆内存中存储
++ 静态变量在堆内存中存储
+
+### 13.1.3 静态变量访问方式
+
+![image-20210929102350886](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210929102350886.png)
+
++ 类名.静态变量名
++ 对象名.静态变量名
+  + 注意：当前这个类的所有对象都可以共享静态变量，原因：当类加载到内存时静态变量就存在，一直到程序结束
+
+![image-20210929103152324](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210929103152324.png)
+
++ 当对象名中存放null时，依然可以访问静态变量名
+  + 也就是说：无论对象名中存放的是地址还是null都可以访问静态变量y
+
+![image-20210929103947683](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210929103947683.png)
+
++ <font color='red'>类优先与对象，类的生命周期比较长</font>
+
+### 13.1.4 什么时候将属性编写为static修饰的
+
++ <font color='red'>**当多个对象中某个属性的值都一样时，则就可以编写为静态变量，原因：节省空间**</font>
+
+## 13.2 static关键字修饰方法
+
++ <font color='red'>方法使用static关键字修饰，称为静态方法，也叫做类的方法</font>
++ <font color='red'>方法没有使用static关键字修饰，称为实例方法，也叫做对象的方法</font>
+
+### 13.2.1 静态方法中可以访问:类的变量和类的方法
+
+实例方法中可以访问：静态变量和静态方法，也可以访问实例变量和实例方法
+
+### 13.2.2 其实main方法也是静态方法
+
+### 13.2.3 什么时候将方法编写为静态方法？
+
++ 编写工具类中的工具方法时，建议：工具方法编写为静态方法，原因：使用比较方便，类名.
++ 当方法体中没有使用到实例变量和实例方法时，则就可以编写为静态方法
+
+## 13.3 static关键字修饰代码块
+
+### 13.3.1静态代码块
+
++ 当使用static关键字修饰代码块，称为静态代码块
+
+```java
+static{
+
+}
+```
+
+### 13.3.2静态代码块作用
+
++ 完成对静态变量初始值
+
+![image-20210929112852949](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20210929112852949.png)
+
+### 13.3.3静态代码块怎么执行
+
++ 当类加载内存时，执行静态代码块，并且只执行一次
+
+![image-20210929114607622](C:/Users/Coder/AppData/Roaming/Typora/typora-user-images/image-20210929114607622.png)
+
+> 创建MyClass对象时，执行过程：
+>    	 1.首先将MyClass.class字节码文件加载到内存中
+>    	 2.然后给静态变量y和z分配空间，并且y的值为100，z的值为默认值0
+>    	 3.会自动执行静态代码块，完成对静态变量z赋值为200
+>    	 4.执行new时会在堆内存中创建一个对象，并且开辟空间存储实例变量x,x的值为默认值0
+>    	 5.同时执行带一个参数的构造方法，完成对实例变量x赋值为111
+>     	6.将右侧对象的内存地址赋给左侧的对象名
+
+## 13.4 static关键字修饰内部类
+
+### 13.4.1 什么是内部类
+
++ 
+  在一个类中再编写一个类，里面的这个类，称为内部类，也可以叫做内置类，或者叫做嵌套类
+  
+
+### 13.4.2 什么时候编写内部类？
+
++ 内部类一般是对外部类提供服务的，如果还想对其他外部类提供服务则建议编写普通的类
+
+### 13.4.3 静态内部类
+
++ 当内部类前面编写static关键字称为静态内部类
+
+```java
+public class MyClass { //称为外部类
+    //编写实例方法
+    public void print(){
+        MyClass2 m = new MyClass2();
+    }
+    class MyClass2{ //称为内部类，一般是在外部类的实例方法中使用
+
+    }
+
+    //编写静态方法
+    public static void show(){
+        MyClass3 m = new MyClass3();
+    }
+    static class MyClass3{ //称为静态内部类，一般是在外部类的静态方法中使用
+
+    }
+}
+```
+
+## 13.5 static关键字可以实现静态导入
+
+```java
+package static1.demo5;
+
+public class MyClass {
+    static int y = 100; //静态变量
+}
+```
+
+# 14 访问权限
+
+## 14.1 类的访问权限
+
++ 分为公共类和非公共类
+
++ 如果一个类前面编写public修饰符，则该类称为公共类，也就是：该类可以在任意包中使用
+
++ 如果一个类前面没有编写public 修饰符，该类称为非公共类，也就是：该类只能在当前包中使用
+
+## 14.2 成员的访问权限
+
++ 在类中编写的都是成员
+
++ 比如：类中编写的变量称为成员变量，类中编写的方法称为成员方法，类中编写的内部类称为成员内部类
+
+| 访问权限                                         | 在本类中                              | 在当前包中                            | 在其他包的子类                        | 在任意包的任意类中                    |
+| ------------------------------------------------ | ------------------------------------- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
+| <font color='red'>**private私有的**</font>       | <font color='red'>**可以使用**</font> | 不可以使用                            | 不可以使用                            | 不可以使用                            |
+| <font color='red'>  **默认的**</font>            | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> | 不可以使用                            | 不可以使用                            |
+| <font color='red'>  **protected受保护的**</font> | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> | 不可以使用                            |
+| <font color='red'>**public公共的**</font>        | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> | <font color='red'>**可以使用**</font> |
+
+## 14.3 总结：
+
+> 1.当属性没有要求时，建议：编写为默认访问权限
+>
+> 2.当要求使用封装完成，建议：实例变量编写为private访问权限
+>
+> 3.当属性要求只能在当前类和子类中使用，则建议：编写为protected访问权限
+>
+> 4.大多数情况下，方法编写为public访问权限
+
+### 14.4 重写override，也叫覆盖规则
+
+> 不能缩小访问权限
+>
+> 返回值类型一致 或者编写父类方法返回值类型的子类类型
+>
+> 方法名称必须一致
+>
+> 参数列表必须一致
+
+# 15 final关键字
+
++ <font color='red'>表示最终的</font>
+
++ <font color='red'>可以修饰类、方法也可以修饰属性</font>
+
+## 15.1 final关键字修饰类
+
++ 当使用final关键字修饰类，表示该类是最终的类，也就是：不能再有子类
+  + 比如：String 、Scanner.......都是使用final关键字修饰的类
+
+## 15.2 final关键字修饰方法
+
++ 当使用final关键字修饰的方法，则该方法为最终的方法，也就是：不能再被重写
+
+## 15.3 final关键字修饰属性
+
+### 15.3.1 常量
+
++ 当使用final关键字修饰属性，称为常量
++ 常量：存放数据的，但是存放的数据是不可以发生改变
+
+### 15.3.2 常量赋值
+
++ 第一种:在声明同时完成赋值
+
++ 第二种:通过构造方法完成赋值
+
+15.3.4 常量命名
+
++ 常量名全部大写，如果有多个单词之间使用下划线隔开
+  + 如：数学中的π值为3.14，则再Java中一般使用PI表示
+
+16 多态
+
+## 16.1  **多态的语法格式**
+
+```java
+父类类型 对象名 = new 子类();
+```
+
+## 16.2  什么是多态
+
++ 多种不同的形态(结果)
+  + 在Java中，多个对象调用同一个方法，得到多个不一样的结果，原因：优先调用子类重写以后的方法
+
+## 16.3 满足多态的条件
+
++ 子类必须继承父类
++ 子类必须重写父类的方法
++ 父类类型 对象名 = new 子类();
+
+### 16.4 多态的好处
+
++ 减少代码的冗余性
+
+![image-20211008190659664](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008190659664.png)
+
+![image-20211008190717187](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008190717187.png)
+
+#### 16.5 多态中的类型转换
+
+### 16.5.1 向上转型
+
+> 当构成多态时，则也就是向上转型或者叫做自动类型转换
+>
+> 比如：Person p = new Student();
+>
+> 其实由子到父
+>
+> 当构成多态，也就是向上转型或者叫做自动类型转换，对象名是父类类型，只能访问父类中公共的属性和公共的方法，但是优先访问子类重写以后的方法
+
+### 16.5.2 向下转型
+
+![image-20211008190849742](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008190849742.png)
+
+# 17 抽象类和抽象方法
+
+## 17.1 抽象类
+
++ 什么时候编写为抽象类？
+  + 一般会将父类编写为抽象类
+
+### 17.1.1 抽象类特点
+
+> 抽象类使用abstract关键字，其中abstract表示抽象
+>
+> 抽象类不能创建对象，也就是：抽象类也是多态的一种形式
+
+## 17.2 抽象方法
+
++ 什么时候编写为抽象方法？
+  + 当父类的方法体使用不到时，则就可以将父类的方法编写为抽象方法
+
+### 17.2.1 抽象方法特点
+
+> 抽象方法使用abstract关键字
+>
+> 抽象方法必须没有方法体，也就是：不需要编写大括号，直接以英文分号作为结尾
+>
+> 抽象方法必须在抽象类
+>
+> 当子类继承抽象类时，子类必须重写抽象类中所有的抽象方法，否则子类也是抽象类
+>
+> 大多数情况下，子类都重写抽象类中的所有抽象方法
+>
+> 抽象类不能创建对象，也就是：抽象类也是多态的一种形式
+
+# 18 接口
+
+## 18.1 接口的定义
+
++ 抽象类中只有抽象方法，则就可以使用接口完成
+
+```java
+public abstract class Pet{
+	public abstract void eat();
+}
+```
+
++ 接口使用interface关键字
+
++ 接口中抽象方法默认有public abstract
+
+```java
+public interface Pet{
+	void eat();
+}
+```
+
+## 18.2 类与接口
+
++ 类与类之间是继承extends，也就是：<font color='red'>子类继承父类</font>，并且<font color='red'>是单继承</font>
+
++ 类与接口之间是实现implements,也就是：<font color='red'>实现类实现接口</font>，<font color='red'>并且是多实现</font>
+
++ 实现类实现接口时，必须要重写接口中所有的抽象方法，否则实现类也是抽象类
++ 大多数情况下实现类都会重写接口中的抽象方法
++ 接口不能创建对象，也就是：接口也是多态的一种形式
++ 接口属于引用数据类型，在内存中存放的是地址
+
+## 18.3 接口注意事项
+
+### 18.3.1 接口注意事项
+
++ 接口是对功能的封装
+
++ 比如：软件工程师既会编写代码，也会讲业务
+
++ <font color='red'>类与类之间是继承，并且是单继承</font>
++ <font color='red'>接口与接口之间是继承，并且是多继承</font>
++ <font color='red'>类与接口之间是实现，并且是多实现</font>
++ <font color='red'>但是接口不能继承类</font>
+
++ JDK8.0中，接口中包含：抽象方法(默认有public abstract)、公有静态常量(默认有public static final)、public static修饰的方法、public default修饰的方法
++ 当一个类既有继承，也有实现，则继承必须位于实现的前面
+
+```java
+public class SE extends Object implements IBusiness,ICode {
+
+}
+```
+
+# 19 抽象类与接口异同点
+
+## 19.1  相同点
+
++ 都可以编写抽象方法
+
++ 都不能创建对象，也就是说:抽象类和接口都是多态的一种形式
+
++ 子类或者实现类要重写抽象方法，否则子类或者实现类必须是抽象类
+
+## 19.2 不同点
+
+### 19.2.1 抽象类
+
++ 使用abstract关键字
+
++ 抽象类中包括：普通类中编写的所有内容，还可以包含抽象方法
++ 子类继承抽象类，并且是单继承
+
+### 19.2.2 接口
+
++ 使用interface关键字
+
++ <font color='red'>在JDK8.0中，接口中包含：抽象方法(默认有public abstract关键字)、公有静态常量(默认有public static final)、public static修饰的方法、public default修饰的方法</font>
++ 实现类实现接口，并且是多实现
+
+# 20 内部类
+
+## 20.1 什么是内部类
+
+一个类中再编写一个类，里面的这个类，称为内部类，也叫做内置类或者叫做嵌套类
+
+```java
+class A{ //称为外部类
+	class B{ //称为内部类
+	}
+}
+```
+
+## 20.2 什么时候编写为内部类
+
++ 内部类一般是对外部类提供服务的，如果内部类还想对其他外部类提供服务，则不建议编写为内部类
+
++ 当一个大的数据结构中包含若干个小的数据结构，则就可以将这些小的数据结构编写为内部类
+
+## 20.3 内部类的分类
+
++ 成员内部类
+
+```Java
+class Inner{ //称为内部类，也叫做成员内部类，一般在外部类的实例方法中使用
+
+}
+```
+
++ 静态内部类
+
+```Java
+static class Inner2{ //称为静态内部类，一般在外部类的静态方法中使用
+
+}
+```
+
++ 局部内部类
+
+```java
+public void print3(){
+    class Innner3{ //称为局部内部类
+
+    }
+}
+```
+
++ <font color='red'>匿名内部类</font>
+  + 匿名也就是没有名字
++ 1.什么时候编写为匿名内部类？
+  + 当只创建一次对象时，也可以编写为匿名内部类
++ 2.其实匿名内部类就是对内部类的简写形式
++ 3.编写匿名内部类前提：必须继承父类或者实现接口
+
+```java
+p = new Pet() {
+    @Override
+    public void eat() {
+        System.out.println("正在吃.....");
+    }
+};
+p.eat();
+
+
+        //注意：1.如果只创建一次对象，则也可以编写为匿名内部类完成
+new Pet(){
+	@Override
+	public void eat() {
+		System.out.println("正在吃Xxxxxx");
+	}
+}.eat();
+
+public class Test3 {
+    public static void main(String[] args) {
+        Master m = new Master();
+        m.feed(new Dog());
+        m.feed(new Pet() {
+            @Override
+            public void eat() {
+                System.out.println("正在吃......");
+            }
+        });
+    }
+}
+
+package demo7;
+
+public class Master {
+    public void feed(Pet p){
+        p.eat();
+    }
+}
+```
+
+# 21 Object类
+
+## 21.1 Object类说明
+
++ 1.在Java中，Object类是所有类的父类也叫做超类，要么直接继承Object类，要么间接继承Object类
+
++ 2.当一个类没有使用extends指定继承哪个父类时，则系统默认继承Object类，也就是：当继承Object父类时，extends Object是可有可无的
+
++ 3.在Java中，所有类都继承Object类中的方法
+
+## 20.2 toString
+
+### 20.2.1 默认输出
+
+默认情况下，只输出对象名c时，则输出：demo8.Computer@4554617c
+完整类名@十六进制的值
+
++ 原因：
+  默认情况下，只输出对象名c时，其实系统默认调用toString()方法，也就是:输出c等价于编写为c.toString()
+    当前对象名c是Computer类型，在调用toString方法时，先在Computer类中找该方法toString()，如果没有找到，则再去父类Object中找该方法toString()
+
+  ```java
+  public String toString() {
+      return getClass().getName() + "@" + Integer.toHexString(hashCode());
+  }
+  ```
+
+### 20.2.2 equals(Object obj)
+
+```java
+package demo9;
+
+import java.util.Objects;
+
+public class Person {
+    //编写实例变量
+    String name;
+    int age;
+    char gender;
+
+    public Person() {
+    }
+
+    public Person(String name, int age, char gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+} 
 
 
 
+package demo9;
+
+public class Test {
+    public static void main(String[] args) {
+        Person p1 = new Person("张三", 19, '男');
+        Person p2 = new Person("张三", 19, '男');
+        System.out.println(p1.equals(p2));
+    }
+}
+```
+
+运行结果：
+
+```powershell
+false
+```
+
+<font color='red'>原因：在默认情况下，调用equals方法，其实执行的是父类Object中的equals方法，依然方法体比较的两个对象的地址是否一致</font>
+
+![image-20211008201615491](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008201615491.png)
+
+解决方法: 
+
++ 重新equals
+
+![image-20211008201950108](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008201950108.png)
+
+# 22 [类与类之间的关系](https://www.cnblogs.com/shijingjing07/p/6228417.html)
+
+## 22.1 依赖
+
+依赖关系是类与类之间的联接。一个类依赖于另一个类的定义。如，一个人(Person)可以买车(Car)和房子(House),Person类依赖于Car和House的定义，因为Person引入了Car和House。与关联不同的是，Person类中没有Car和House的属性，Car和House的实例是以参量的方式传入到buy()方法中的。一般而言，依赖关系在Java语言中体现为局部变量，方法形参，或者对静态方法的调用。
+
+![image-20211008202440566](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008202440566.png)
+
+## 22.2 关联
+
+关联是类与类之间的联接，使一个类知道另一个类的属性和方法。关联可以是双向，也可以是单向的。一般使用成员变量来实现。
+
+![image-20211008202510101](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008202510101.png)
+
+## 22.3 聚合
+
+聚合是一种强的关联关系。是整体和个体之间的关系。例如，汽车类与引擎类，轮胎类之间的关系就是整体与个体之间的关系。与关联关系一样，聚合关系也是通过实例变量实现的。但是关联关系涉及的两个类在同一层次，而聚合关系中两个类处在不平等的层次上，一个代表整体，一个代表部分。
+
+![img](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/300946-20161228101335851-1483683152.png)
+
+## 22.4 组合
+
+组合也是关联关系的一种，一种比聚合关系强的关系。组合关系中的部分类不能独立于整体类存在。整体类和部分类有相同的生命周期。如Person类和Leg类。
+
+![image-20211008202610053](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008202610053.png)
+
+## 22.5 继承/泛化
+
+泛化和继承其实是一个逆过程 泛化就是有子类抽象出一个父类 而继承就是由父类具体化一个子类 例如足球比联赛跟什么西甲 意甲 英超之间就是泛化/继承的关系
+
+![image-20211008202620909](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008202620909.png)
+
+## 22.6 组合和聚合的区别
+
+组合和聚合都属于关联，所以它们之间难免有相似之处，区别举例来说明：
+程老师的《大话》里举大那个大雁的例子很贴切 在此我就借用一下 大雁喜欢热闹害怕孤独 所以它们一直过着群居的生活 这样就有了雁群 每一只大雁都有自己的雁群 每个雁群都有好多大雁 大雁与雁群的这种关系就可以称之为聚合 另外每只大雁都有两只翅膀 大雁与雁翅的关系就叫做组合 有此可见 聚合的关系明显没有组合紧密 大雁不会因为它们的群主将雁群解散而无法生存 而雁翅就无法脱离大雁而单独生存——组合关系的类具有相同的生命周期
+聚合关系图：
+
+![img](https://images2015.cnblogs.com/blog/300946/201612/300946-20161228101435898-1130053478.png)
+
+聚合关系图：
+
+![image-20211008202703308](https://raw.githubusercontent.com/chfanyang/scrNot/main/img/image-20211008202703308.png)
+
+雁群类：
+
+```JAVA
+public class GooseGroup
+{
+    publi Goose goose;
+    public GooseGroup(Goose goose){
+        this.goose=goose;
+    }
+}
+```
+
+大雁类：
+
+```JAVA
+public class Goose{
+    public Wings wings;
+    public Goose()
+    {
+        wings=new Wings();
+    }
+}    
+```
 
 
 
+从构造函数来看，GooseGroup的构造函数要用到Goose作为参数把值传进来，Goose可以脱离GooseGroup独立存在。
+组合关系中整体类含有部分类的实例化，Goose在实例化之前，一定要先实例化Wings，两个类紧密耦合在一起，它们有相同的生命周期，Wings不能独立于Goose存在。
+
+从信息封装来看，聚合关系中，客户端同时了解GooseGroup和Goose，因为它们是独立的。
+而在组合关系中，客户端只认识大雁类，根本不知道翅膀类的存在，因为翅膀类被严密封装在大雁类中。
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+类与类之间的关系
 
 
 
